@@ -7,7 +7,9 @@ Welcome to Netro!
 To run the Netro website locally, follow these steps:
 
     cd Frontend
+###
     npm install
+###
     npm run dev
 
 This will start the development server, typically available at:
