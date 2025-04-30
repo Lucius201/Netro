@@ -11,9 +11,13 @@ function NavBar() {
             </h1>
             <ul>
                 <li>
-                    <a>
-                        <i className="fa-regular fa-circle-user"></i> Sign In
-                    </a>
+                    <>
+                        <a>
+                            <i className="fa-regular fa-circle-user"></i>
+                            Sign In
+                        </a>
+                        <button>sign in</button>
+                    </>
                 </li>
             </ul>
         </StyledNavbar>
