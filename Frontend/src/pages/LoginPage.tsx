@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "../components/NavBar";
 
 function LoginPage() {
     const [email, setEmail] = useState("");
@@ -13,7 +12,6 @@ function LoginPage() {
 
     return (
         <>
-            <NavBar></NavBar>
             <div
                 style={{
                     display: "flex",

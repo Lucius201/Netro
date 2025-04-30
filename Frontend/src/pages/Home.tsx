@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+// import NavBar from "../components/TempNavBar";
 
 function Home() {
     return (
@@ -6,7 +6,6 @@ function Home() {
             <div>
                 <a>Hallo</a>
             </div>
-            <NavBar></NavBar>
         </>
     );
 }
