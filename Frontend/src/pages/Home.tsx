@@ -1,12 +1,10 @@
-import { StyledA } from "../styles/StyledText";
-
-import NavBar from "../components/navbar";
+import NavBar from "../components/NavBar";
 
 function Home() {
     return (
         <>
             <div>
-                <StyledA>Hallo</StyledA>
+                <a>Hallo</a>
             </div>
             <NavBar></NavBar>
         </>
