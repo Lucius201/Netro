@@ -1,15 +1,14 @@
 import Navbar from "../components/NavBar";
 
-function Home() {
+function About() {
     return (
         <>
             <Navbar></Navbar>
             <div>
-                <h1>Home</h1>
-                <p>Hello</p>
+                <h1>About Page</h1>
+                <p>Hello we are Netro</p>
             </div>
         </>
     );
 }
-
-export default Home;
+export default About;
