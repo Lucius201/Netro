@@ -1,0 +1,6 @@
+{
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "doubleQuotes": true,
+    "maxLineLength": 120
+}
