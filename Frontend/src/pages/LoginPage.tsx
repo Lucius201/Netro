@@ -13,7 +13,7 @@ function LoginPage() {
 
     return (
         <>
-            {/* <Navbar></Navbar> */}
+            <Navbar></Navbar>
             <div
                 style={{
                     display: "flex",
