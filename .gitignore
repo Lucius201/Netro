@@ -2,5 +2,5 @@ Frontend/node_modules
 Frontend/.idea
 Backend/.idea
 .idea
-.DS_Store
 .vscode
+.DS_Store
