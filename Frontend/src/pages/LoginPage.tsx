@@ -5,9 +5,8 @@ function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async (e: React.FormEvent) => {
+    async function handleLogin(e: React.FormEvent) {
         e.preventDefault();
-
 
         const body = {
             email: email,
@@ -15,7 +14,6 @@ function LoginPage() {
         };
 
         try {
-
             const response = await fetch("http://localhost:8080/login", {
                 method: "POST",
                 headers: {
@@ -36,7 +34,7 @@ function LoginPage() {
         }
 
         console.log("Logging in with:", { email, password });
-    };
+    }
 
     return (
         <>
