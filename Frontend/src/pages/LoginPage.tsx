@@ -5,15 +5,42 @@ function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Add login logic here
+
+
+        const body = {
+            email: email,
+            password: password,
+        };
+
+        try {
+
+            const response = await fetch("http://localhost:8080/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(body),
+            });
+
+            if (response.ok) {
+                console.log("Login successful");
+                const data = await response.json();
+                console.log("Response data:", data);
+            } else {
+                console.error("Login failed", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error during login:", error);
+        }
+
         console.log("Logging in with:", { email, password });
     };
 
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar />
             <div
                 style={{
                     display: "flex",
