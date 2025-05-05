@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import "../styles/variables.css";
 
 function NavBar() {
     return (
