@@ -3,18 +3,19 @@ import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
     return (
-        <div>
-            <div>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/loginpage" element={<LoginPage />} />
-                    <Route path="/about" element={<About />} />
-                </Routes>
-            </div>
-        </div>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/loginpage" element={<LoginPage />} />
+
+            {/* anything inside here requires a JWT */}
+            <Route element={<ProtectedRoute />}>
+                <Route path="/about" element={<About />} />
+            </Route>
+        </Routes>
     );
 }
 

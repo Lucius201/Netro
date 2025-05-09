@@ -1,39 +1,33 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/NavBar";
 
 function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     async function handleLogin(e: React.FormEvent) {
         e.preventDefault();
 
-        const body = {
-            email: email,
-            password: password,
-        };
-
         try {
             const response = await fetch("http://localhost:8080/login", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(body),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
             });
 
             if (response.ok) {
-                console.log("Login successful");
-                const data = await response.json();
-                console.log("Response data:", data);
+                const { token } = await response.json();
+                localStorage.setItem("jwt", token);
+                navigate("/about");
             } else {
-                console.error("Login failed", response.statusText);
+                alert("Invalid credentials");
             }
-        } catch (error) {
-            console.error("Error during login:", error);
+        } catch (err) {
+            console.error("Login error:", err);
+            alert("An error occurred");
         }
-
-        console.log("Logging in with:", { email, password });
     }
 
     return (
@@ -52,6 +46,7 @@ function LoginPage() {
                     style={{ width: "300px", textAlign: "center" }}
                 >
                     <h2>Login</h2>
+
                     <div style={{ marginBottom: "1rem" }}>
                         <label
                             htmlFor="email"
@@ -68,6 +63,7 @@ function LoginPage() {
                             required
                         />
                     </div>
+
                     <div style={{ marginBottom: "1rem" }}>
                         <label
                             htmlFor="password"
@@ -84,6 +80,7 @@ function LoginPage() {
                             required
                         />
                     </div>
+
                     <button
                         type="submit"
                         style={{ padding: "0.5rem 1rem", cursor: "pointer" }}
