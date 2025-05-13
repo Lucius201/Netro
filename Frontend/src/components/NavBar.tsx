@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/styles.css";
+import "../styles/globals.css";
 
 export default function NavBar() {
     return (

@@ -1,11 +1,11 @@
-import styles from "./CallToAction.module.css";
+import "../styles/globals.css";
 
 const CallToAction = () => {
     return (
-        <section className={styles.section}>
-            <h2 className={styles.heading}>Ready to get started?</h2>
+        <section className="section">
+            <h2 className="heading">Ready to get started?</h2>
             <a href="/register_redirect">
-                <button className={styles.button}>Join Netro Now</button>
+                <button className="button">Join Netro Now</button>
             </a>
         </section>
     );

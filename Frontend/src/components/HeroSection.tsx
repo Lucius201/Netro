@@ -3,7 +3,7 @@ export default function HeroSection() {
         <article className="fadin-firstSection">
             <div className="text-block">
                 <h1 className="title">
-                    Willkommen bei <span className="rainbow">DeinProjekt</span>
+                    Willkommen bei <span className="rainbow">NETRO</span>
                 </h1>
                 <p>Hier ist dein erster Eindruck. Mach ihn unvergesslich.</p>
                 <a href="#features" className="cta">
