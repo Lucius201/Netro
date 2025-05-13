@@ -11,7 +11,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/loginpage" element={<LoginPage />} />
 
-            {/* anything inside here requires a JWT */}
             <Route element={<ProtectedRoute />}>
                 <Route path="/about" element={<About />} />
             </Route>

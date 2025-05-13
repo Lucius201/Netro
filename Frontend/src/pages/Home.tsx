@@ -5,7 +5,6 @@ const Section1 = () => <div className="bg-red-500 w-full h-full"></div>;
 const Section2 = () => <div className="bg-green-500 w-full h-full"></div>;
 const Section3 = () => <div className="bg-blue-500 w-full h-full"></div>;
 
-
 function Home() {
     return (
         <>
@@ -21,3 +20,5 @@ function Home() {
         </>
     );
 }
+
+export default Home;
