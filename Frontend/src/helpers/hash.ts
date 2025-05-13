@@ -13,4 +13,4 @@ export async function comparePassword(
     return isMatch;
 }
 
-// hashPassword("hello").then((hash) => console.log(hash));
+hashPassword("secret").then((hash) => console.log(hash));

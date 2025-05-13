@@ -1,8 +1,14 @@
-package org.example.backend;
+package org.example.backend.login;
 
-@lombok.Getter
-@lombok.AllArgsConstructor
-@lombok.EqualsAndHashCode
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@EqualsAndHashCode
 public class LoginRequest {
     private String email;
     private String password;
