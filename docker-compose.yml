@@ -1,0 +1,45 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80" # außen:3000 → innen:nginx:80
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/netromessenger
+      SPRING_DATASOURCE_USERNAME: netro
+      SPRING_DATASOURCE_PASSWORD: geheim123
+    networks:
+      - netz
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: netromessenger
+      POSTGRES_USER: netro
+      POSTGRES_PASSWORD: geheim123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - netz
+
+volumes:
+  postgres_data:
+
+networks:
+  netz:
