@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/*@import "tailwindcss";
 
 :root {
     --text: #1e90ff;
@@ -14,13 +14,12 @@
 
 .no-scrollbar {
     overflow: auto; /* Ermöglicht das Scrollen */
-}
-
+/*}
 .no-scrollbar::-webkit-scrollbar {
     display: none; /* Entfernt die Scrollbar in Webkit-Browsern */
-}
+/*}
 
 .no-scrollbar {
     -ms-overflow-style: none; /* Für IE und Edge */
-    scrollbar-width: none; /* Für Firefox */
-}
+    /*scrollbar-width: none; /* Für Firefox */
+/*}/*

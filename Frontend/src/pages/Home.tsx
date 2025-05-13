@@ -1,24 +1,26 @@
-import Navbar from "../components/NavBar";
-import OnepageScroll from "../components/OnepageScroll.tsx";
+import NavBar from "@/components/NavBar";
+import OnepageScroll from "@/components/OnepageScroll";
+import HeroSection from "@/components/HeroSection";
+import FeaturesSection from "@/components/FeatureSection";
+import AboutSection from "@/components/AboutSection";
+import TestimonialsSection from "@/components/TestimonialSection";
+import CallToAction from "@/components/CallToAction";
+import Footer from "@/components/Footer";
 
-const Section1 = () => <div className="bg-red-500 w-full h-full"></div>;
-const Section2 = () => <div className="bg-green-500 w-full h-full"></div>;
-const Section3 = () => <div className="bg-blue-500 w-full h-full"></div>;
-
-function Home() {
+export default function Home() {
     return (
         <>
-            <Navbar></Navbar>
-            <OnepageScroll>
-                <Section1 />
-                <Section2 />
-                <Section3 />
-                <Section1 />
-                <Section2 />
-                <Section3 />
-            </OnepageScroll>
+            <NavBar />
+            <main className="landingMain">
+                <OnepageScroll>
+                    <HeroSection />
+                    <FeaturesSection />
+                    <AboutSection />
+                    <TestimonialsSection />
+                    <CallToAction />
+                </OnepageScroll>
+            </main>
+            <Footer />
         </>
     );
 }
-
-export default Home;
