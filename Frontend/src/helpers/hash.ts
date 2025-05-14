@@ -1,16 +1,14 @@
 import bcrypt from "bcrypt";
 
 export async function hashPassword(password: string): Promise<string> {
-    const hash = await bcrypt.hash(password, 12);
-    return hash;
+    return await bcrypt.hash(password, 12);
 }
 
 export async function comparePassword(
     password: string,
     hash: string,
 ): Promise<boolean> {
-    const isMatch = await bcrypt.compare(password, hash);
-    return isMatch;
+    return bcrypt.compare(password, hash);
 }
 
-hashPassword("secret").then((hash) => console.log(hash));
+hashPassword("test").then((hash) => console.log(hash));

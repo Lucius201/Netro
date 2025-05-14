@@ -15,6 +15,17 @@ Dieses Projekt besteht aus drei Containern: **Frontend**, **Backend** und **Data
    docker-compose up --build
     ```
    Dieser Befehl baut die Images und startet die Container gemäß der Konfiguration in der docker-compose.yml.
+
+
+Test User hinzufügen
+
+   ```bash
+      docker exec -it netro-db-1 psql -U netro_user -d netrodb \
+      -c "INSERT INTO users (email, password) \
+      VALUES ('test@test', \
+      '\$2b\$12\$O4Chu3NwncHDO2U2QnuFG.VfItCXLT9S5NKqnvA3/B8F3UTGNIpFi');"
+   ```
+
 ---
 ## Zugriff auf die Services
 

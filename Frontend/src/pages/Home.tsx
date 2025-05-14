@@ -6,7 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialSection";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
-import '../styles/globals.css';
+import "../styles/globals.css";
 
 function Home() {
     return (
