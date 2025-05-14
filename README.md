@@ -27,6 +27,10 @@ This will start the Springboot Application at:
 
     http://localhost:8080
 
+## Installing the PostgreSQL DB
+
+    brew install postgrewsql@14
+
 ## 📦 Prerequisites
 
 - [Node.js](https://nodejs.org/) (v16 or higher)

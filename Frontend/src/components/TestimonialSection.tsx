@@ -1,3 +1,4 @@
+import '../styles/globals.css';
 export default function TestimonialsSection() {
     return (
         <section className="testimonial-section">

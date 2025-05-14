@@ -1,3 +1,4 @@
+import '../styles/globals.css';
 export default function HeroSection() {
     return (
         <article className="fadin-firstSection">
@@ -6,7 +7,7 @@ export default function HeroSection() {
                     Willkommen bei <span className="rainbow">NETRO</span>
                 </h1>
                 <p>Hier ist dein erster Eindruck. Mach ihn unvergesslich.</p>
-                <a href="#features" className="cta">
+                <a className="cta">
                     Mehr erfahren
                 </a>
             </div>

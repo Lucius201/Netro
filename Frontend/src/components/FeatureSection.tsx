@@ -1,3 +1,4 @@
+import '../styles/globals.css';
 export default function() {
     return (
         <article className="fadin-firstSection">

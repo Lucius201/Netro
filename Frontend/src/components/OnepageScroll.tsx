@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+import '../styles/globals.css';
+
 export default function OnepageScroll({ children }: { children: ReactNode }) {
     return (
         <div className="landingMain">
