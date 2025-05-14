@@ -5,7 +5,7 @@ services:
       context: ./Frontend
       dockerfile: Dockerfile
     ports:
-      - "3000:80" # außen:3000 → innen:nginx:80
+      - "5173:80" # außen:3000 → innen:nginx:80
     depends_on:
       - backend
 

@@ -18,10 +18,10 @@ This will start the development server, typically available at:
 
 ## 🖥️ Running the Backend
 
-    mvn clean install
+    ./mvnw clean install
 ###
 
-    mvn spring-boot:run
+    ./mvnw clean spring-boot:run
 
 This will start the Springboot Application at:
 
