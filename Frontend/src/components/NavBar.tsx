@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import "../styles/globals.css";
-
 export default function NavBar() {
     return (
         <header className="navbar">

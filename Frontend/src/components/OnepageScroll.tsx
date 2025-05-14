@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export default function OnepageScroll({ children }: { children: ReactNode }) {
     return (
         <div className="landingMain">

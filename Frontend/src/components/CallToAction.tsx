@@ -1,6 +1,4 @@
-import "../styles/globals.css";
-
-const CallToAction = () => {
+export default function CallToAction() {
     return (
         <section className="section">
             <h2 className="heading">Ready to get started?</h2>
@@ -9,6 +7,4 @@ const CallToAction = () => {
             </a>
         </section>
     );
-};
-
-export default CallToAction;
+}

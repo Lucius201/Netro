@@ -1,4 +1,4 @@
-const AboutSection = () => {
+export default function AboutSection() {
     return (
         <section className="about-section">
             <h2 className="about-heading">About Us</h2>
@@ -12,6 +12,4 @@ const AboutSection = () => {
             </div>
         </section>
     );
-};
-
-export default AboutSection;
+}
