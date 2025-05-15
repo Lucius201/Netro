@@ -8,9 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@ToString(exclude = "password") // Important: Don't include password in logs!
+@ToString(exclude = "password")
 @Entity
-@Table(name = "users") // lowercase is conventional
+@Table(name = "users")
 public class UserEntity {
 
     @Id

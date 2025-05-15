@@ -3,10 +3,10 @@ Content-Type: application/json
 
 {
   "email": "test@test",
-  "password": "secret"
+  "password": "test"
 }
 
 
-# curl -X POST 'http://localhost:8080/login' \
-#   -H 'Content-Type: application/json' \
-#   -d '{"email":"test@test","password":"secret"}'
+// curl -X POST 'http://localhost:8080/login' \
+//   -H 'Content-Type: application/json' \
+//   -d '{"email":"test@test","password":"secret"}'

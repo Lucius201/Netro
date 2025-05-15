@@ -31,7 +31,7 @@ public class JwtFilter implements Filter {
                 + "  method=" + r.getMethod());
 
         // Use servletPath so we match exactly "/login"
-        if (r.getRequestURI().endsWith("/login") || "OPTIONS".equals(r.getMethod())) {
+        if ("/login".equals(r.getServletPath()) || "OPTIONS".equals(r.getMethod())) {
             chain.doFilter(req, res);
             return;
         }

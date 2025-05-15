@@ -30,6 +30,11 @@ public class LoginHandler {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest req) {
         Optional<UserEntity> existingUser = userRepo.findByEmail(req.getEmail());
+        System.out.println(existingUser.isPresent());
+        System.out.println(existingUser);
+//        System.out.println(req.getEmail());
+        System.out.println(req.getPassword());
+        System.out.println(req.toString());
 
         if (existingUser.isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
@@ -37,6 +42,7 @@ public class LoginHandler {
         }
 
         UserEntity user = existingUser.get();
+
 
         if (!encoder.matches(req.getPassword(), user.getPassword())) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
