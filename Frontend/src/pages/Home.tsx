@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBar/NavBar";
 import OnepageScroll from "@/components/OnepageScroll";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeatureSection";
