@@ -202,7 +202,7 @@ nav ul li {
     display: none; /* Für Chrome, Safari und Opera */
 }
 
-section {
+/*section {
     display: flex;
     flex-direction: column;
 }
@@ -213,16 +213,16 @@ section {
     overflow: hidden;
     top: 50%;
     transform: translate(0, calc(-50% + 30px)) /*test*/
-}
+/*}*/
 
-.fadin-firstSection {
+/*.fadin-firstSection {
     animation: fadein-firstSection 1s;
 }
 
 .text-block h3 {
     color: var(--textcolor);
     margin-bottom: 5px;
-}
+} */
 
 @keyframes fadein-firstSection {
     0% {

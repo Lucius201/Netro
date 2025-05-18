@@ -1,14 +1,16 @@
 import NavBar from "../components/NavBar";
+import HeroSection from "../components/HeroSection";
 // import LogIn
 // impiort Register
 import "../styles/globals.css";
 
-function Home() {
+function Landing() {
     return (
         <>
             <NavBar />
+            <HeroSection />
         </>
     );
 }
 
-export default Home;
+export default Landing;
