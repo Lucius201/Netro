@@ -1,18 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import '../styles/globals.css';
 import LoginPage from "./pages/LoginPage";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import Landing from "./pages/Landing";
+//import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./ProtectedRoute";
+
 
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/loginpage" element={<LoginPage />} />
-
             <Route element={<ProtectedRoute />}>
-                <Route path="/about" element={<About />} />
+                
             </Route>
         </Routes>
     );
