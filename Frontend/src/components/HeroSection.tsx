@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   const sectionStyle: React.CSSProperties = {
@@ -20,19 +21,36 @@ export default function HeroSection() {
   };
 
   const h1Style: React.CSSProperties = {
-    // Optional: eigene H1-Stile
+    fontSize: '3rem',
+    fontWeight: 'bold',
+    lineHeight: '1.1',
+    margin: 0,
   };
 
   const rainbowStyle: React.CSSProperties = {
-    // Optional: Rainbow-Stil
+    background: 'linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    display: 'inline-block',
   };
 
   const paragraphStyle: React.CSSProperties = {
-    // Optional: eigene P-Stile
+    fontSize: '1.25rem',
+    marginTop: '1rem',
+    maxWidth: '40rem',
   };
 
   const ctaStyle: React.CSSProperties = {
-    // Optional: Call-to-action-Stil
+    display: 'inline-block',
+    marginTop: '2rem',
+    padding: '0.75rem 1.5rem',
+    backgroundColor: '#8d5ce0',
+    color: '#fff',
+    borderRadius: '8px',
+    textDecoration: 'none',
+    fontWeight: 600,
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    transition: 'background-color 0.3s ease',
   };
 
   return (
@@ -42,8 +60,12 @@ export default function HeroSection() {
           <h1 style={h1Style}>
             Willkommen bei <span style={rainbowStyle}>NETRO</span>
           </h1>
-          <p style={paragraphStyle}>Hier ist dein erster Eindruck. Mach ihn unvergesslich.</p>
-          <a style={ctaStyle}>Mehr erfahren</a>
+          <p style={paragraphStyle}>
+            Hier ist dein erster Eindruck. Mach ihn unvergesslich.
+          </p>
+          <Link to="/loginpage" style={ctaStyle}>
+            Register
+          </Link>
         </div>
       </article>
     </section>
