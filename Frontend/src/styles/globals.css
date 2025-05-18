@@ -127,7 +127,7 @@ a:hover {
 
 
 
-/* Header und Navigation */
+/* Header und Navigation 
 header {
     background-color: var(--background);
     padding: 45px 0 0.6rem 0;
@@ -138,7 +138,7 @@ header {
     border-bottom: none;
     position: absolute;
     width: 100%;
-}
+}*/
 
 @keyframes fadeinNav {
     0% {
@@ -150,23 +150,27 @@ header {
      opacity: 1;
     }
   }
-
-header.navbar-on-scroll {
+  
+  .navbar {
+    animation: fadeinNav 1s;
+  }
+  
+/*header.navbar-on-scroll {
     padding-top: 15px;
     height: 70px;
     border-bottom: 1px solid #333333;
-}
+}*/
 
-nav {
+/*nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 75rem;
     margin: 0 auto;
     padding: 0 4rem;
-}
+}*/
 
-nav h1 {
+/*nav h1 {
     font-size: 1.3rem;
 }
 
@@ -183,7 +187,7 @@ nav ul li {
 
 .burger {
     display: none;
-}
+}*/
 
 /* Hauptinhalt */
 
