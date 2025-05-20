@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/NavBar";
-import "../styles/globals.css";
+//import "../styles/globals.css";
 
 function LoginPage() {
     const [email, setEmail] = useState("");
