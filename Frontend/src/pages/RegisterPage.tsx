@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import Navbar from "../components/NavBar";
 import RegisterField from "../components/RegisterField";
+import "../styles/globals.css";
 
 export default function RegisterPage() {
   return (
@@ -12,7 +12,6 @@ export default function RegisterPage() {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
-          backgroundColor: "#f5f5f5",
           padding: "1rem",
         }}
       >

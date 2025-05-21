@@ -26,10 +26,12 @@ export default function HeroSection() {
   };
 
   const rainbowStyle: React.CSSProperties = {
-    background: 'linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)',
+    backgroundImage: 'linear-gradient(to right, rgb(127, 113, 255), rgb(123, 0, 255), rgb(166, 0, 255), rgb(255, 0, 149), orange)',
+    color: 'transparent',
+    backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    display: 'inline-block',
+    display: 'inline',
+    paddingRight: '0.125rem',
   };
 
   const paragraphStyle: React.CSSProperties = {
@@ -56,13 +58,13 @@ export default function HeroSection() {
       <article style={articleStyle}>
         <div style={textBlockStyle}>
           <h1 style={h1Style}>
-            Willkommen bei <span style={rainbowStyle}>NETRO</span>
+            Connect with <span style={rainbowStyle}>New People</span>
           </h1>
           <p style={paragraphStyle}>
-            Hier ist dein erster Eindruck. Mach ihn unvergesslich.
+            The Social Network that offers you Data Based Matches
           </p>
           <Link to="/registerpage" style={ctaStyle}>
-            Register
+            Register Now
           </Link>
         </div>
       </article>
