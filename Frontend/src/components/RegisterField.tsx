@@ -32,16 +32,17 @@ export default function RegisterField() {
 
   return (
     <form
-      onSubmit={handleRegister}
-      style={{
-        width: "450px",
-        backgroundColor: "#000613",
-        padding: "2rem",
-        borderRadius: "50px",
-        boxShadow: "0 0 5px rgba(128, 0, 255, 0.5)",
-        textAlign: "center",
-      }}
-    >
+    onSubmit={handleRegister}
+    style={{
+      width: "450px",
+      background: "linear-gradient(to bottom, #00061380 10%, #00061380 70%, #3a0a75 100%, #3a0a75 100%)",
+      padding: "2rem",
+      borderRadius: "50px",
+      boxShadow: "0 0 5px rgba(128, 0, 255, 0.5)",
+      textAlign: "center",
+    }}
+   >
+
       <h2 style={{ marginBottom: "1.5rem" }}>Create an account</h2>
 
       <div style={{ marginBottom: "1rem", textAlign: "left" }}>
@@ -49,19 +50,20 @@ export default function RegisterField() {
           htmlFor="email"
           style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}
         >
-          Email
         </label>
         <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="Email"
+          placeholder="Email"
           style={{
             width: "100%",
-            padding: "0.5rem",
-            borderRadius: "50px",
-            border: "1px solid #ccc",
+            padding: "0.75rem 1rem",
+            borderRadius: "999px",               // Pillenform
+            border: "1px solid #2e2e2e",         // Dunkelgraue Umrandung
+            backgroundColor: "#3a3a3a",          // Grauer Hintergrund
+            color: "#fff",                       // Weißer Text
             fontSize: "1rem",
+            outline: "none",
+            marginBottom: "1rem",
           }}
           required
         />
@@ -72,19 +74,20 @@ export default function RegisterField() {
           htmlFor="password"
           style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}
         >
-          Password
         </label>
         <input
           type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
           style={{
             width: "100%",
-            padding: "0.5rem",
-            borderRadius: "50px",
-            border: "1px solid #ccc",
+            padding: "0.75rem 1rem",
+            borderRadius: "999px",               // Pillenform
+            border: "1px solid #2e2e2e",         // Dunkelgraue Umrandung
+            backgroundColor: "#3a3a3a",          // Grauer Hintergrund
+            color: "#fff",                       // Weißer Text
             fontSize: "1rem",
+            outline: "none",
+            marginBottom: "1rem",
           }}
           required
         />
