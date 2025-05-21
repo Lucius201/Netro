@@ -21,7 +21,7 @@ function LoginPage() {
             if (response.ok) {
                 const { token } = await response.json();
                 localStorage.setItem("jwt", token);
-                navigate("/about");
+                navigate("/");
             } else {
                 alert("Invalid credentials");
             }
