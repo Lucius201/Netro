@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "../styles/globals.css";
 
 export default function RegisterField() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -46,25 +45,12 @@ export default function RegisterField() {
       <h2 style={{ marginBottom: "1.5rem" }}>Registrieren</h2>
 
       <div style={{ marginBottom: "1rem", textAlign: "left" }}>
-        <label htmlFor="name" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600" }}>Name</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "0.5rem",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            fontSize: "1rem",
-          }}
-          required
-        />
-      </div>
-
-      <div style={{ marginBottom: "1rem", textAlign: "left" }}>
-        <label htmlFor="email" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600" }}>Email</label>
+        <label
+          htmlFor="email"
+          style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600" }}
+        >
+          Email
+        </label>
         <input
           type="email"
           id="email"
@@ -82,7 +68,12 @@ export default function RegisterField() {
       </div>
 
       <div style={{ marginBottom: "1.5rem", textAlign: "left" }}>
-        <label htmlFor="password" style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600" }}>Passwort</label>
+        <label
+          htmlFor="password"
+          style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600" }}
+        >
+          Passwort
+        </label>
         <input
           type="password"
           id="password"
