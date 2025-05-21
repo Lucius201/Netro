@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar";
 import HeroSection from "../components/HeroSection";
+import RegisterField from "../components/RegisterField";
 // import LogIn
-// impiort Register
 import "../styles/globals.css";
 
 function Landing() {
@@ -9,6 +9,7 @@ function Landing() {
         <>
             <NavBar />
             <HeroSection />
+            <RegisterField />
         </>
     );
 }
