@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Landing from "./pages/Landing";
-//import RegisterPage from "./pages/RegisterPage";
+import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./ProtectedRoute";
 
 
@@ -10,6 +10,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/loginpage" element={<LoginPage />} />
+            <Route path="/registerpage" element={<RegisterPage />} />
             <Route element={<ProtectedRoute />}>
                 
             </Route>
