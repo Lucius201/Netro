@@ -63,7 +63,7 @@ export default function HeroSection() {
           <p style={paragraphStyle}>
             Hier ist dein erster Eindruck. Mach ihn unvergesslich.
           </p>
-          <Link to="/loginpage" style={ctaStyle}>
+          <Link to="/registerpage" style={ctaStyle}>
             Register
           </Link>
         </div>

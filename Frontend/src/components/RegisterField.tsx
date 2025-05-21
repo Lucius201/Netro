@@ -1,6 +1,6 @@
-// components/RegisterField.tsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "../styles/globals.css";
 
 export default function RegisterField() {
   const [name, setName] = useState("");
@@ -15,7 +15,7 @@ export default function RegisterField() {
       const response = await fetch("http://localhost:8080/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       if (response.ok) {
