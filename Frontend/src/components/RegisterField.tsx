@@ -34,20 +34,20 @@ export default function RegisterField() {
     <form
       onSubmit={handleRegister}
       style={{
-        width: "350px",
-        backgroundColor: "#fff",
+        width: "450px",
+        backgroundColor: "#000613",
         padding: "2rem",
-        borderRadius: "10px",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        borderRadius: "50px",
+        boxShadow: "0 0 5px rgba(128, 0, 255, 0.5)",
         textAlign: "center",
       }}
     >
-      <h2 style={{ marginBottom: "1.5rem" }}>Registrieren</h2>
+      <h2 style={{ marginBottom: "1.5rem" }}>Create an account</h2>
 
       <div style={{ marginBottom: "1rem", textAlign: "left" }}>
         <label
           htmlFor="email"
-          style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600" }}
+          style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}
         >
           Email
         </label>
@@ -59,7 +59,7 @@ export default function RegisterField() {
           style={{
             width: "100%",
             padding: "0.5rem",
-            borderRadius: "5px",
+            borderRadius: "50px",
             border: "1px solid #ccc",
             fontSize: "1rem",
           }}
@@ -70,9 +70,9 @@ export default function RegisterField() {
       <div style={{ marginBottom: "1.5rem", textAlign: "left" }}>
         <label
           htmlFor="password"
-          style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600" }}
+          style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}
         >
-          Passwort
+          Password
         </label>
         <input
           type="password"
@@ -82,7 +82,7 @@ export default function RegisterField() {
           style={{
             width: "100%",
             padding: "0.5rem",
-            borderRadius: "5px",
+            borderRadius: "50px",
             border: "1px solid #ccc",
             fontSize: "1rem",
           }}
@@ -93,13 +93,13 @@ export default function RegisterField() {
       <button
         type="submit"
         style={{
-          width: "100%",
+          width: "50%",
           padding: "0.75rem",
           backgroundColor: "#8d5ce0",
           color: "white",
           fontWeight: "bold",
           fontSize: "1rem",
-          borderRadius: "8px",
+          borderRadius: "50px",
           border: "none",
           cursor: "pointer",
           transition: "background-color 0.3s ease",
@@ -107,7 +107,7 @@ export default function RegisterField() {
         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#7a4ccc")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#8d5ce0")}
       >
-        Registrieren
+        Sign up
       </button>
     </form>
   );
