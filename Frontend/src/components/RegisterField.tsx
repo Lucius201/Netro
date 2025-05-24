@@ -52,8 +52,10 @@ export default function RegisterField() {
         >
         </label>
         <input
-          type="Email"
           placeholder="Email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           style={{
             width: "100%",
             padding: "0.75rem 1rem",
@@ -76,8 +78,10 @@ export default function RegisterField() {
         >
         </label>
         <input
-          type="password"
           placeholder="Password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           style={{
             width: "100%",
             padding: "0.75rem 1rem",
