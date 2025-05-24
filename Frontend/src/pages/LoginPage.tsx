@@ -15,13 +15,14 @@ function LoginPage() {
             const response = await fetch("http://localhost:8080/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
+                credentials: "include",
                 body: JSON.stringify({ email, password }),
             });
 
             if (response.ok) {
-                const { token } = await response.json();
-                localStorage.setItem("jwt", token);
-                navigate("/");
+                // const { token } = await response.json();
+                // localStorage.setItem("jwt", token);
+                navigate("/chat");
             } else {
                 alert("Invalid credentials");
             }

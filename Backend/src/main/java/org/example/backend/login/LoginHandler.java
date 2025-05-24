@@ -7,6 +7,7 @@ import org.springframework.http.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Duration;
 import java.util.Map;
 import java.util.Optional;
 
@@ -49,6 +50,17 @@ public class LoginHandler {
 
         String token = jwt.generate(user.getEmail());
 
-        return ResponseEntity.ok(Map.of("token", token));
+        // HttpOnly-Cookie bauen
+        ResponseCookie cookie = ResponseCookie.from("JWT", token)
+                .httpOnly(true)
+                .secure(false) // in Prod auf true setzen
+                .path("/")
+                .maxAge(Duration.ofHours(2))
+                .sameSite("Lax")
+                .build();
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.SET_COOKIE, cookie.toString())
+                .body(Map.of("status", "ok"));
     }
 }

@@ -16,6 +16,7 @@ export default function RegisterField() {
             const response = await fetch("http://localhost:8080/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
+                credentials: "include",
                 body: JSON.stringify({ email, password }),
             });
 

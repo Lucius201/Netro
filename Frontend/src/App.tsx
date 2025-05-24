@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 //import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./ProtectedRoute";
 import RegisterPage from "./pages/RegisterPage";
+import Chat from "./pages/Chat";
 
 function App() {
     return (
@@ -12,7 +13,9 @@ function App() {
             <Route path="/loginpage" element={<LoginPage />} />
             <Route path="/registerpage" element={<RegisterPage />} />
 
-            <Route element={<ProtectedRoute />}></Route>
+            <Route element={<ProtectedRoute />}>
+                <Route path="/chat" element={<Chat />} />
+            </Route>
         </Routes>
     );
 }
