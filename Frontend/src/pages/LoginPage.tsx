@@ -35,19 +35,24 @@ function LoginPage() {
         <>
             <Navbar />
             <div
-                 style={{
-                   width: "450px",
-                   background: "linear-gradient(to bottom, #00061380 10%, #00061380 70%, #3a0a75 100%, #3a0a75 100%)",
-                   padding: "2rem",
-                   borderRadius: "50px",
-                   boxShadow: "0 0 5px rgba(128, 0, 255, 0.5)",
-                   textAlign: "center",
-                 }}
-                >
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100vh",
+                }}
+            >
                 <form
                     onSubmit={handleLogin}
-                    style={{ width: "300px", textAlign: "center" }}
-                >
+                    style={{
+                      width: "450px",
+                      background: "linear-gradient(to bottom, #00061380 10%, #00061380 70%, #3a0a75 100%, #3a0a75 100%)",
+                      padding: "2rem",
+                      borderRadius: "50px",
+                      boxShadow: "0 0 5px rgba(128, 0, 255, 0.5)",
+                      textAlign: "center",
+                     }}
+                    >
                     <h2>Login</h2>
 
                     <div style={{ marginBottom: "1rem" }}>
