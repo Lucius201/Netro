@@ -106,14 +106,14 @@ a:hover {
     background-color: var(--buttonHover);
 }
 
-.rainbow {
+/* .rainbow {
     background-image: linear-gradient(to right, rgb(127, 113, 255), rgb(123, 0, 255), rgb(166, 0, 255), rgb(255, 0, 149), orange);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     display: inline;
     padding-right: 0.125rem;
-}
+} */
 
 .fade-in-section {
     opacity: 0;

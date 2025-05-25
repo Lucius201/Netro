@@ -70,7 +70,7 @@ function LoginPage() {
                           width: "100%",
                           padding: "0.75rem 1rem",
                           borderRadius: "999px",               // Pillenform
-                          border: "1px solid #2e2e2e",         // Dunkelgraue Umrandung
+                          border: "1px solid #2e2e2e",       // Dunkelgraue Umrandung
                           backgroundColor: "#3a3a3a",          // Grauer Hintergrund
                           color: "#fff",                       // Weißer Text
                           fontSize: "1rem",
