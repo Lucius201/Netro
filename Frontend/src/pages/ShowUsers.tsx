@@ -5,9 +5,9 @@ export default function ShowUsers() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch("/api/users", {
+        fetch("http://localhost:8080/users", {
             method: "GET",
-            credentials: "include", // JWT-Cookie wird mitgeschickt
+            credentials: "include",
         })
             .then((res) => {
                 if (!res.ok) {

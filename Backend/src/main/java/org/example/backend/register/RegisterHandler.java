@@ -1,7 +1,7 @@
 package org.example.backend.register;
 
 import org.example.backend.jwt.JwtUtils;
-import org.example.backend.model.UserEntity;
+import org.example.backend.user.UserEntity;
 import org.example.backend.repository.UserRepository;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;

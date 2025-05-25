@@ -1,7 +1,7 @@
 // src/main/java/org/example/backend/controller/UserTestController.java
 package org.example.backend.test;
 
-import org.example.backend.model.UserEntity;
+import org.example.backend.user.UserEntity;
 import org.example.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

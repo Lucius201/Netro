@@ -68,7 +68,6 @@ public class JwtUtils {
             parse(token);
             return true;
         } catch (JwtException | IllegalArgumentException ex) {
-            // hier könntet ihr noch Logging einfügen
             return false;
         }
     }

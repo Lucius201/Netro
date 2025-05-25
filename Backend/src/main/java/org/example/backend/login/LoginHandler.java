@@ -1,7 +1,7 @@
 package org.example.backend.login;
 
 import org.example.backend.jwt.JwtUtils;
-import org.example.backend.model.UserEntity;
+import org.example.backend.user.UserEntity;
 import org.example.backend.repository.UserRepository;
 import org.springframework.http.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

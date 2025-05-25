@@ -12,7 +12,6 @@ public class MeController {
 
     @GetMapping("/me")
     public ResponseEntity<?> me(@AuthenticationPrincipal String email) {
-        // Kommt nur hierher, wenn der JWT-Filter erfolgreich war
         return ResponseEntity.ok(Map.of("email", email));
     }
 }

@@ -26,7 +26,6 @@ public class WebSocketConfig implements WebSocketConfigurer {
                 .setAllowedOrigins("http://localhost:5173");
     }
 
-    @Bean
     public WebSocketHandler chatHandler() {
         return new ChatHandler();
     }
