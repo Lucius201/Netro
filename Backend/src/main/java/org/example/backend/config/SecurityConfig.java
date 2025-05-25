@@ -47,6 +47,8 @@ public class SecurityConfig {
                         .permitAll()
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 
+                        .requestMatchers("/ws/**").permitAll()
+
                         // alle API-Routen erfordern Authentifizierung
                         .requestMatchers("/api/**").authenticated()
 

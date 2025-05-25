@@ -9,7 +9,7 @@ export default function UserList({ onSelectUser, currentUserEmail }: Props) {
     const [users, setUsers] = useState<string[]>([]);
 
     useEffect(() => {
-        fetch('/api/users', {
+        fetch('http://localhost:8080/users', {
             method: 'GET',
             // eslint-disable-next-line no-irregular-whitespace
             credentials: 'include' // Damit Cookies (z. B. JWT) mitgesendet werden!
