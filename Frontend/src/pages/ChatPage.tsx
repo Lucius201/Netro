@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import UserList from '../components/UserList';
-import ChatWindow from '../components/ChatWindow';
+import { useState } from "react";
+import UserList from "../components/UserList";
+import ChatWindow from "../components/ChatWindow";
 
 export default function ChatPage() {
     const [selectedUser, setSelectedUser] = useState<string | null>(null);
@@ -11,10 +11,16 @@ export default function ChatPage() {
     return (
         <div>
             <h1>💬 1-zu-1 WebSocket Chat</h1>
-            <div style={{ display: 'flex' }}>
-                <UserList onSelectUser={setSelectedUser} currentUserEmail={currentUserEmail} />
+            <div style={{ display: "flex" }}>
+                <UserList
+                    onSelectUser={setSelectedUser}
+                    currentUserEmail={currentUserEmail}
+                />
                 {selectedUser && (
-                    <ChatWindow receiver={selectedUser} currentUserEmail={currentUserEmail} />
+                    <ChatWindow
+                        receiver={selectedUser}
+                        currentUserEmail={currentUserEmail}
+                    />
                 )}
             </div>
         </div>
@@ -22,7 +28,7 @@ export default function ChatPage() {
 }
 
 function getCurrentUserEmailFromCookie(): string | null {
-    const email = localStorage.getItem('email');
+    const email = localStorage.getItem("email");
     if (!email) return null;
     return email;
 }

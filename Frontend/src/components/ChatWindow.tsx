@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
     receiver: string;
@@ -14,17 +14,19 @@ type ChatMessage = {
 
 export default function ChatWindow({ receiver, currentUserEmail }: Props) {
     const [messages, setMessages] = useState<ChatMessage[]>([]);
-    const [text, setText] = useState('');
+    const [text, setText] = useState("");
     const ws = useRef<WebSocket | null>(null);
 
     useEffect(() => {
-        ws.current = new WebSocket('ws://localhost:8080/ws/chat');
+        ws.current = new WebSocket("ws://localhost:8080/ws/chat");
 
         ws.current.onmessage = (event: MessageEvent) => {
             const msg: ChatMessage = JSON.parse(event.data);
             const isRelevant =
-                (msg.senderId === receiver && msg.receiverId === currentUserEmail) ||
-                (msg.senderId === currentUserEmail && msg.receiverId === receiver);
+                (msg.senderId === receiver &&
+                    msg.receiverId === currentUserEmail) ||
+                (msg.senderId === currentUserEmail &&
+                    msg.receiverId === receiver);
 
             if (isRelevant) {
                 setMessages((prev) => [...prev, msg]);
@@ -47,20 +49,31 @@ export default function ChatWindow({ receiver, currentUserEmail }: Props) {
         };
 
         ws.current.send(JSON.stringify(msg));
-        setText('');
+        setText("");
     };
 
     return (
         <div>
             <h3>Chat mit: {receiver}</h3>
-            <div style={{ border: '1px solid gray', height: '200px', overflowY: 'scroll', padding: '0.5rem' }}>
+            <div
+                style={{
+                    border: "1px solid gray",
+                    height: "200px",
+                    overflowY: "scroll",
+                    padding: "0.5rem",
+                }}
+            >
                 {messages.map((m, idx) => (
                     <div key={idx}>
                         <b>{m.senderId}</b>: {m.content}
                     </div>
                 ))}
             </div>
-            <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Nachricht..." />
+            <input
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                placeholder="Nachricht..."
+            />
             <button onClick={sendMessage}>Senden</button>
         </div>
     );
