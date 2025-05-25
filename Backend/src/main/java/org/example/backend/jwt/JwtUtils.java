@@ -72,4 +72,15 @@ public class JwtUtils {
             return false;
         }
     }
+
+    public boolean isTokenValid(String token) {
+        return validate(token);
+    }
+
+    public String extractEmail(String token) {
+        return getEmailFromToken(token);
+    }
+
+
+
 }
