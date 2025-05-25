@@ -22,13 +22,7 @@ export default function ChatPage() {
 }
 
 function getCurrentUserEmailFromCookie(): string | null {
-    const cookie = document.cookie.split('; ').find((row) => row.startsWith('JWT='));
-    if (!cookie) return null;
-    const token = cookie.split('=')[1];
-    try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        return payload.sub;
-    } catch {
-        return null;
-    }
+    const email = localStorage.getItem('email');
+    if (!email) return null;
+    return email;
 }

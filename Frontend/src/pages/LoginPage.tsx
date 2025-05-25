@@ -22,6 +22,7 @@ function LoginPage() {
             if (response.ok) {
                 // const { token } = await response.json();
                 // localStorage.setItem("jwt", token);
+                localStorage.setItem("email", email);
                 navigate("/chat");
             } else {
                 alert("Invalid credentials");
