@@ -31,7 +31,7 @@ public class JwtAuthHandshakeInterceptor implements HandshakeInterceptor {
 
             if (cookies != null) {
                 for (Cookie cookie : cookies) {
-                    if ("jwt".equals(cookie.getName())) {
+                    if ("JWT".equals(cookie.getName())) {
                         String token = cookie.getValue();
                         if (jwtService.isTokenValid(token)) {
                             String userId = jwtService.extractEmail(token);

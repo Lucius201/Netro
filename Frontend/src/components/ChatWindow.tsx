@@ -47,7 +47,7 @@ export default function ChatWindow({ receiver, currentUserEmail }: Props) {
             content: text,
             timestamp: new Date().toISOString(),
         };
-
+        setMessages((prev) => [...prev, msg]);
         ws.current.send(JSON.stringify(msg));
         setText("");
     };
