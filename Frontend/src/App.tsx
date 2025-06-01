@@ -12,10 +12,7 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/loginpage" element={<LoginPage />} />
             <Route path="/registerpage" element={<RegisterPage />} />
-            <Route element={<ProtectedRoute />}>
             <Route path="/chat" element={<Chat />} />
-                
-            </Route>
         </Routes>
     );
 }
