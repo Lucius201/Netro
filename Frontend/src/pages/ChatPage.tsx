@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UserList from "../components/UserList";
-import ChatWindow from "../components/ChatWindow";
+import ChatWindow from "../components/ChatWindow.tsx";
 
 export default function ChatPage() {
     const [selectedUser, setSelectedUser] = useState<string | null>(null);

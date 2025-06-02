@@ -6,10 +6,10 @@ type Props = {
 };
 
 type ChatMessage = {
-    senderId: string;
-    receiverId: string;
+    senderEmail: string;
+    receiverEmail: string;
     content: string;
-    timestamp: string;
+    timestamp: Date;
 };
 
 export default function ChatWindow({ receiver, currentUserEmail }: Props) {
@@ -23,10 +23,10 @@ export default function ChatWindow({ receiver, currentUserEmail }: Props) {
         ws.current.onmessage = (event: MessageEvent) => {
             const msg: ChatMessage = JSON.parse(event.data);
             const isRelevant =
-                (msg.senderId === receiver &&
-                    msg.receiverId === currentUserEmail) ||
-                (msg.senderId === currentUserEmail &&
-                    msg.receiverId === receiver);
+                (msg.senderEmail === receiver &&
+                    msg.receiverEmail === currentUserEmail) ||
+                (msg.senderEmail === currentUserEmail &&
+                    msg.receiverEmail === receiver);
 
             if (isRelevant) {
                 setMessages((prev) => [...prev, msg]);
@@ -42,10 +42,10 @@ export default function ChatWindow({ receiver, currentUserEmail }: Props) {
         if (!ws.current || ws.current.readyState !== WebSocket.OPEN) return;
 
         const msg: ChatMessage = {
-            senderId: currentUserEmail,
-            receiverId: receiver,
+            senderEmail: currentUserEmail,
+            receiverEmail: receiver,
             content: text,
-            timestamp: new Date().toISOString(),
+            timestamp: new Date()
         };
         setMessages((prev) => [...prev, msg]);
         ws.current.send(JSON.stringify(msg));
@@ -65,7 +65,7 @@ export default function ChatWindow({ receiver, currentUserEmail }: Props) {
             >
                 {messages.map((m, idx) => (
                     <div key={idx}>
-                        <b>{m.senderId}</b>: {m.content}
+                        <b>{m.senderEmail}</b>: {m.content}
                     </div>
                 ))}
             </div>
