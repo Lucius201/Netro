@@ -12,6 +12,7 @@ export default function Sidebar({ users, selectedUser, onSelectUser }: Props) {
                 backgroundColor: "#0a0f1f",
                 color: "#fff",
                 padding: "1rem",
+                paddingTop: "3rem",
                 borderRight: "1px solid #333",
                 boxSizing: "border-box",
             }}
