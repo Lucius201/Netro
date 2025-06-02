@@ -1,22 +1,18 @@
-import {Route, Routes} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import LandingPage from "./pages/Landing";
+import Landing from "./pages/Landing";
 import RegisterPage from "./pages/RegisterPage";
-import ChatPage from "./pages/ChatPage";
-import ShowUsers from "./pages/ShowUsers";
+import ProtectedRoute from "./ProtectedRoute";
+import Chat from "./pages/Chat";
+
 
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<LandingPage/>}/>
-            <Route path="/loginpage" element={<LoginPage/>}/>
-            <Route path="/registerpage" element={<RegisterPage/>}/>
-            <Route path="/users" element={<ShowUsers/>}/>
-
-            {/* Geschützter Bereich */}
-            {/*<Route element={<ProtectedRoute />}>*/}
-            <Route path="/chat" element={<ChatPage/>}/>
-            {/*</Route>*/}
+            <Route path="/" element={<Landing />} />
+            <Route path="/loginpage" element={<LoginPage />} />
+            <Route path="/registerpage" element={<RegisterPage />} />
+            <Route path="/chat" element={<Chat />} />
         </Routes>
     );
 }

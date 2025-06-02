@@ -46,8 +46,15 @@ function LoginPage() {
             >
                 <form
                     onSubmit={handleLogin}
-                    style={{ width: "300px", textAlign: "center" }}
-                >
+                    style={{
+                      width: "450px",
+                      background: "linear-gradient(to bottom, #00061380 10%, #00061380 70%, #3a0a75 100%, #3a0a75 100%)",
+                      padding: "2rem",
+                      borderRadius: "50px",
+                      boxShadow: "0 0 5px rgba(128, 0, 255, 0.5)",
+                      textAlign: "center",
+                     }}
+                    >
                     <h2>Login</h2>
 
                     <div style={{ marginBottom: "1rem" }}>
@@ -55,16 +62,25 @@ function LoginPage() {
                             htmlFor="email"
                             style={{ display: "block", marginBottom: "0.5rem" }}
                         >
-                            Email
                         </label>
                         <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            style={{ width: "100%", padding: "0.5rem" }}
-                            required
-                        />
+                        placeholder="Email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        style={{
+                          width: "100%",
+                          padding: "0.75rem 1rem",
+                          borderRadius: "999px",               // Pillenform
+                          border: "1px solid #2e2e2e",       // Dunkelgraue Umrandung
+                          backgroundColor: "#3a3a3a",          // Grauer Hintergrund
+                          color: "#fff",                       // Weißer Text
+                          fontSize: "1rem",
+                          outline: "none",
+                          marginBottom: "1rem",
+                        }}
+                        required
+                      />
                     </div>
 
                     <div style={{ marginBottom: "1rem" }}>
@@ -72,22 +88,44 @@ function LoginPage() {
                             htmlFor="password"
                             style={{ display: "block", marginBottom: "0.5rem" }}
                         >
-                            Password
                         </label>
                         <input
-                            type="password"
+                            placeholder="Password"
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            style={{ width: "100%", padding: "0.5rem" }}
+                            style={{
+                              width: "100%",
+                              padding: "0.75rem 1rem",
+                              borderRadius: "999px",               // Pillenform
+                              border: "1px solid #2e2e2e",         // Dunkelgraue Umrandung
+                              backgroundColor: "#3a3a3a",          // Grauer Hintergrund
+                              color: "#fff",                       // Weißer Text
+                              fontSize: "1rem",
+                              outline: "none",
+                              marginBottom: "1rem",
+                            }}
                             required
-                        />
+                          />
                     </div>
 
                     <button
                         type="submit"
-                        style={{ padding: "0.5rem 1rem", cursor: "pointer" }}
-                    >
+                        style={{
+                          width: "50%",
+                          padding: "0.75rem",
+                          backgroundColor: "#8d5ce0",
+                          color: "white",
+                          fontWeight: "bold",
+                          fontSize: "1rem",
+                          borderRadius: "50px",
+                          border: "none",
+                          cursor: "pointer",
+                          transition: "background-color 0.3s ease",
+                         }}
+                         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#7a4ccc")}
+                         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#8d5ce0")}
+                       >
                         Login
                     </button>
                 </form>

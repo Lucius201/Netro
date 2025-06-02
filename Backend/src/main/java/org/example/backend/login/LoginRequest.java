@@ -1,11 +1,7 @@
 package org.example.backend.login;
 
-import lombok.*;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@EqualsAndHashCode
 @Data
 public class LoginRequest {
     private String email;
