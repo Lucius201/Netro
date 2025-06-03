@@ -1,11 +1,17 @@
 package org.example.backend.login;
 
 import org.example.backend.jwt.JwtUtils;
-import org.example.backend.user.UserEntity;
 import org.example.backend.repository.UserRepository;
-import org.springframework.http.*;
+import org.example.backend.user.UserEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseCookie;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Duration;
 import java.util.Map;
@@ -34,7 +40,6 @@ public class LoginHandler {
         System.out.println(existingUser);
         // System.out.println(req.getEmail());
         System.out.println(req.getPassword());
-        System.out.println(req.toString());
 
         if (existingUser.isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
