@@ -20,8 +20,6 @@ function LoginPage() {
             });
 
             if (response.ok) {
-                // const { token } = await response.json();
-                // localStorage.setItem("jwt", token);
                 localStorage.setItem("email", email);
                 navigate("/chat");
             } else {
@@ -92,6 +90,7 @@ function LoginPage() {
                         <input
                             placeholder="Password"
                             id="password"
+                            type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             style={{

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UserList from "../components/UserList";
-import ChatWindow from "../components/ChatWindow.tsx";
+import OldChatWindow from "../components/OldChatWindow.tsx";
 
 export default function ChatPage() {
     const [selectedUser, setSelectedUser] = useState<string | null>(null);
@@ -17,7 +17,7 @@ export default function ChatPage() {
                     currentUserEmail={currentUserEmail}
                 />
                 {selectedUser && (
-                    <ChatWindow
+                    <OldChatWindow
                         receiver={selectedUser}
                         currentUserEmail={currentUserEmail}
                     />

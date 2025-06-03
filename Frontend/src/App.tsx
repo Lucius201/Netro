@@ -1,10 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Landing from "./pages/Landing";
 import RegisterPage from "./pages/RegisterPage";
-import ProtectedRoute from "./ProtectedRoute";
 import Chat from "./pages/Chat";
-
 
 function App() {
     return (
