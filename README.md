@@ -1,3 +1,4 @@
+
 # Netro
 
 Welcome to Netro!
@@ -6,33 +7,74 @@ Welcome to Netro!
 
 To run the Netro website locally, follow these steps:
 
-    cd Frontend
-###
-    npm install
-###
-    npm run dev
+```bash
+  cd Frontend
+```
+
+```bash
+  npm install
+```
+
+```bash
+  npm run dev
+```
 
 This will start the development server, typically available at:
 
-    http://localhost:5173
-
+```
+http://localhost:5173
+```
+---
 ## 🖥️ Running the Backend
 
-    ./mvnw clean install
-###
+```bash
+  ./mvnw clean install
+```
 
-    ./mvnw clean spring-boot:run
+```bash
+  ./mvnw clean spring-boot:run
+```
 
-This will start the Springboot Application at:
+This will start the Spring Boot application at:
 
-    http://localhost:8080
+```
+http://localhost:8080
+```
 
-## Installing the PostgreSQL DB
+ℹ️ Backend cannot be built without a PostgreSQL database running on port 5432
 
-    brew install postgrewsql@14
+---
+## 🧑‍💻 Installing the PostgreSQL DB
+
+```bash
+  brew install postgresql@14
+```
+
+* PostgreSQL database on port 5432
+* User: `netro_user`
+* Database: `netrodb`
+* Password: `netropass`
+
+```bash
+  brew services start postgresql
+```
+
+### Optional:
+
+```bash
+  docker-compose up --build
+```
+
+Starts a PostgreSQL database via Docker.
 
 ## 📦 Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- npm (comes with Node.js)
-- JDK 21 (recommended)
+* [Node.js](https://nodejs.org/) (v16 or higher)
+* JDK 21
+
+## 👫 Collaborators
+
+* Lucius Lechner (GunnerSkaleHD/LuciusL)
+* Johann Flögel (JFlegel)
+* Atussa Mehrawari (atsmh)
+
