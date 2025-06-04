@@ -11,7 +11,8 @@ type NavbarProps = {
   user: User | null; // null, wenn nicht angemeldet
 };
 
-export default function NavBar() {
+// Nur EINE default-Export-Funktion
+const NavBar: React.FC<NavbarProps> = ({ user }) => {
   const headerStyle: React.CSSProperties = {
     backgroundColor: "var(--background)",
     padding: "45px 0 0.6rem 0",
@@ -55,7 +56,6 @@ export default function NavBar() {
     color: "inherit",
   };
 
-const Navbar: React.FC<NavbarProps> = ({ user }) => {
   return (
     <header className="navbar" style={headerStyle}>
       <nav style={navStyle}>
@@ -65,24 +65,30 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
           </Link>
         </h1>
         <ul style={ulStyle}>
-          <li style={liStyle}>
-            <Link to="/loginpage" style={linkStyle}>
-              Login
-            </Link>
-            <ul style={ulStyle}>
-          <li style={liStyle}>
-            <Link to="/loginpage" style={linkStyle}>
-             <img
-              src={user.avatarUrl}
-              alt={`${user.name}'s Avatar`}
-              className="w-8 h-8 rounded-full"
-            />
-              <span>{user.name}</span>
-            </Link>
-          </li>
+          {user ? (
+            // Wenn user angemeldet ist, Avatar + Name anzeigen
+            <li style={liStyle}>
+              <Link to="/profile" style={linkStyle}>
+                {/* <img
+                  src={user.avatarUrl}
+                  alt={`${user.name}'s Avatar`}
+                  style={{ width: "32px", height: "32px", borderRadius: "50%", marginRight: "0.5rem" }}
+                /> */}
+                <span>{localStorage.getItem("e-mail")}</span>
+              </Link>
+            </li>
+          ) : (
+            // Wenn NICHT angemeldet, Login-Link zeigen
+            <li style={liStyle}>
+              <Link to="/loginpage" style={linkStyle}>
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
   );
 };
-export default Navbar;
+
+export default NavBar;
