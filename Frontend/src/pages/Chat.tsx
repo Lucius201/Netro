@@ -4,7 +4,7 @@ import "../styles/globals.css";
 
 function Chat() {
        // Hole Name und Avatar-URL des eingeloggten Users aus dem LocalStorage
-    const name = localStorage.getItem("email");
+    const name = localStorage.getItem("name");
     const avatarUrl = localStorage.getItem("avatarUrl");
 
     // Da die Chat-Seite nur für eingeloggte User ist, gehen wir davon aus, dass 'name' vorhanden ist
