@@ -5,7 +5,7 @@ import "../styles/globals.css";
 
 function Landing() {
     // Holt Name und Avatar-URL des Users aus dem LocalStorage
-    const name = localStorage.getItem("name");
+    const name = localStorage.getItem("email");
     const avatarUrl = localStorage.getItem("avatarUrl");
 
     // Wenn ein Name vorhanden ist, wird ein User-Objekt erstellt.
