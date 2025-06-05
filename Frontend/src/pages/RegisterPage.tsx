@@ -1,11 +1,11 @@
-import NavBarNeu from "../components/NavBarNeu";
+import NavBar from "../components/NavBarNeu";
 import RegisterField from "../components/RegisterField";
 import "../styles/globals.css";
 
 export default function RegisterPage() {
     return (
         <>
-            <NavBarNeu /> {/* kein user notwendig */}
+            <NavBar user={null} />
             <div
                 style={{
                     display: "flex",
