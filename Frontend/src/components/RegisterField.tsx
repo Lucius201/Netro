@@ -77,7 +77,7 @@ export default function RegisterField() {
                     htmlFor="email"
                     style={{
                         display: "block",
-                        marginBottom: "0.5rem",
+                        marginBottom: "1rem",
                         fontWeight: "500",
                     }}
                 ></label>
