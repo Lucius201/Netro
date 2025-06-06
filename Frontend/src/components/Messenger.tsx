@@ -4,15 +4,15 @@ import ChatWindow from "./ChatWindow.tsx";
 
 // Definiert den Typ für eine Chat-Nachricht
 type ChatMessage = {
-    senderId: string | null;    // E-Mail-Adresse des Absenders
-    receiverId: string | null;  // E-Mail-Adresse des Empfängers
-    content: string | null;     // Textinhalt der Nachricht
-    timestamp: string;          // Zeitstempel im ISO-Format
+    senderId: string | null; // E-Mail-Adresse des Absenders
+    receiverId: string | null; // E-Mail-Adresse des Empfängers
+    content: string | null; // Textinhalt der Nachricht
+    timestamp: string; // Zeitstempel im ISO-Format
 };
 
 // Liest die E-Mail-Adresse des aktuellen Benutzers aus dem localStorage.
 // Gibt die E-Mail als String zurück oder null, falls nicht gesetzt.
-function getCurrentUserEmailFromCookie(): string | null {
+function getCurrentUserEmailFromLocalStorage(): string | null {
     return localStorage.getItem("email");
 }
 
@@ -30,13 +30,18 @@ export default function Messenger() {
     // Referenz auf das WebSocket-Objekt, bleibt über Rerenders hinweg erhalten
     const ws = useRef<WebSocket | null>(null);
     // E-Mail-Adresse des aktuell angemeldeten Benutzers
-    const currentUserEmail = getCurrentUserEmailFromCookie();
+    const currentUserEmail = getCurrentUserEmailFromLocalStorage();
 
     /**
      * Aufbau der WebSocket-Verbindung und Empfang von Nachrichten
      * Dieser Effekt wird jedes Mal ausgeführt, wenn sich `selectedUser` oder
      * `currentUserEmail` ändert (also z. B. beim Wechsel des Chat-Partners).
      */
+
+
+
+
+
     useEffect(() => {
         // 1. Neue WebSocket-Verbindung zum Backend herstellen
         ws.current = new WebSocket("ws://localhost:8080/ws/chat");
@@ -50,8 +55,10 @@ export default function Messenger() {
             //      - Entweder der ausgewählte Benutzer (selectedUser) hat uns (currentUserEmail) eine Nachricht
             //      - Oder wir (currentUserEmail) haben dem ausgewählten Benutzer (selectedUser) eine Nachricht gesendet
             const isRelevant =
-                (msg.senderId === selectedUser && msg.receiverId === currentUserEmail) ||
-                (msg.senderId === currentUserEmail && msg.receiverId === selectedUser);
+                (msg.senderId === selectedUser &&
+                    msg.receiverId === currentUserEmail) ||
+                (msg.senderId === currentUserEmail &&
+                    msg.receiverId === selectedUser);
 
             // 2.3. Falls relevant, die Nachricht zum lokalen Zustand hinzufügen
             if (isRelevant) {
@@ -70,7 +77,7 @@ export default function Messenger() {
      * Wird einmalig beim Mounten des Components und bei Änderung von `currentUserEmail` ausgeführt.
      */
     useEffect(() => {
-        fetch("http://localhost:8080/users", {
+        fetch("http://localhost:8080/useremails", {
             credentials: "include", // Cookies/Credentials mitsenden, falls nötig
         })
             .then((res) => res.json())
@@ -131,13 +138,13 @@ export default function Messenger() {
             />
             {/* ChatWindow-Komponente zeigt den aktuellen Chatverlauf und das Eingabefeld */}
             <ChatWindow
-                messages={messages}               // Alle Nachrichten für das Rendering
+                messages={messages} // Alle Nachrichten für das Rendering
                 currentUserEmail={currentUserEmail} // E-Mail des aktuellen Benutzers für Styling/Unterscheidung
-                selectedUser={selectedUser}       // E-Mail des Chat-Partners
-                text={text}                       // Aktueller Texteingabe-Zustand
-                setText={setText}                 // Setter-Funktion für das Texteingabe-Feld
-                onSend={sendMessage}              // Funktion, die beim Klick auf „Senden“ aufgerufen wird
-                bottomRef={bottomRef}             // DOM-Referenz für automatisches Scrollen
+                selectedUser={selectedUser} // E-Mail des Chat-Partners
+                text={text} // Aktueller Texteingabe-Zustand
+                setText={setText} // Setter-Funktion für das Texteingabe-Feld
+                onSend={sendMessage} // Funktion, die beim Klick auf „Senden“ aufgerufen wird
+                bottomRef={bottomRef} // DOM-Referenz für automatisches Scrollen
             />
         </div>
     );
