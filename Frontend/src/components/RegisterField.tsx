@@ -41,7 +41,36 @@ export default function RegisterField() {
                 textAlign: "center",
             }}
         >
-            <h2 style={{ marginBottom: "1.5rem" }}>Create an account</h2>
+            <h2 style={{ marginBottom: "1,5rem" }}>Create an account</h2>
+            <div style={{ marginBottom: "1,5rem", textAlign: "left" }}>
+                <label
+                    htmlFor="name"
+                    style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "500",
+                    }}
+                ></label>
+                <input
+                    placeholder="Name"
+                    id="name"
+                    type="name"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    style={{
+                        width: "100%",
+                        padding: "0.75rem 1rem",
+                        borderRadius: "999px", // Pillenform
+                        border: "1px solid #2e2e2e", // Dunkelgraue Umrandung
+                        backgroundColor: "#3a3a3a", // Grauer Hintergrund
+                        color: "#fff", // Weißer Text
+                        fontSize: "1rem",
+                        outline: "none",
+                        marginBottom: "1rem",
+                    }}
+                    required
+                />
+            </div>
 
             <div style={{ marginBottom: "1rem", textAlign: "left" }}>
                 <label
@@ -52,6 +81,7 @@ export default function RegisterField() {
                         fontWeight: "500",
                     }}
                 ></label>
+                
                 <input
                     placeholder="Email"
                     id="email"
