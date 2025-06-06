@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/globals.css";
 
 export default function RegisterField() {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -14,7 +16,7 @@ export default function RegisterField() {
             const response = await fetch("http://localhost:8080/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({ firstName, lastName, email, password }),
                 credentials: "include",
             });
 
@@ -45,6 +47,64 @@ export default function RegisterField() {
 
             <div style={{ marginBottom: "1rem", textAlign: "left" }}>
                 <label
+                    htmlFor="firstName"
+                    style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "500",
+                    }}
+                ></label>
+                <input
+                    placeholder="First Name"
+                    id="firstname"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    style={{
+                        width: "100%",
+                        padding: "0.75rem 1rem",
+                        borderRadius: "999px", // Pillenform
+                        border: "1px solid #2e2e2e", // Dunkelgraue Umrandung
+                        backgroundColor: "#3a3a3a", // Grauer Hintergrund
+                        color: "#fff", // Weißer Text
+                        fontSize: "1rem",
+                        outline: "none",
+                        marginBottom: "1rem",
+                    }}
+                    required
+                />
+            </div>
+
+            <div style={{ marginBottom: "1.5rem", textAlign: "left" }}>
+                <label
+                    htmlFor="lastName"
+                    style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "500",
+                    }}
+                ></label>
+                <input
+                    placeholder="Last Name"
+                    id="lastName"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    style={{
+                        width: "100%",
+                        padding: "0.75rem 1rem",
+                        borderRadius: "999px", // Pillenform
+                        border: "1px solid #2e2e2e", // Dunkelgraue Umrandung
+                        backgroundColor: "#3a3a3a", // Grauer Hintergrund
+                        color: "#fff", // Weißer Text
+                        fontSize: "1rem",
+                        outline: "none",
+                        marginBottom: "1rem",
+                    }}
+                    required
+                />
+            </div>
+
+            <div style={{ marginBottom: "2rem", textAlign: "left" }}>
+                <label
                     htmlFor="email"
                     style={{
                         display: "block",
@@ -72,7 +132,7 @@ export default function RegisterField() {
                 />
             </div>
 
-            <div style={{ marginBottom: "1.5rem", textAlign: "left" }}>
+            <div style={{ marginBottom: "2.5rem", textAlign: "left" }}>
                 <label
                     htmlFor="password"
                     style={{

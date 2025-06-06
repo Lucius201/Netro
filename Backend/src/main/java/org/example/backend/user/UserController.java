@@ -17,15 +17,30 @@ public class UserController {
     public List<String> getAllEmails() {
         return userRepository.listAllEmails();
     }        // or inject the repo directly
-
+//    public List<String> getAllUsers() {
+//        return userRepository.listAllUsernames();
+//    }
     /**
      * Front-end already calls POST /users.
      * Keep it POST, or switch to GET – Spring-Security treats both the same here.
      */
-    @GetMapping("/users")            // or @GetMapping if you prefer REST purity
+    @GetMapping("/useremails")            // or @GetMapping if you prefer REST purity
     public List<String> listEmails() {
         // JwtAuthenticationFilter has already populated SecurityContext:
         // we are here only if the JWT cookie was valid.
         return getAllEmails();
     }
+
+//    @PostMapping("/userfirstnames")
+//    public List<String> listUsers(@RequestBody Map<String, String> request) {
+//        String email = request.get("email");
+//
+//        int index = usersEmails.indexOf(email);
+//        if (index != -1 && index < usersFirstNames.size()) {
+//            usersFirstNames.remove(index);
+//            usersEmails.remove(index); // Optional: keep lists in sync
+//        }
+//
+//        return usersFirstNames;
+//    }
 }

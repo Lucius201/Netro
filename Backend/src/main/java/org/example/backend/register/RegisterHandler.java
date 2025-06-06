@@ -46,6 +46,8 @@ public class RegisterHandler {
 
             // Create and save the user
             UserEntity user = new UserEntity();
+            user.setFirstName(request.getFirstName());
+            user.setLastName(request.getLastName());
             user.setEmail(request.getEmail());
             user.setPassword(hashedPassword);
             userRepository.save(user);
