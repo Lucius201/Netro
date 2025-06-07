@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import '../styles/globals.css';
 import React from 'react';
 
@@ -8,11 +8,12 @@ type User = {
 };
 
 type NavbarProps = {
-  user: User | null; // null, wenn nicht angemeldet
+  user: User | null;
 };
 
-// Nur EINE default-Export-Funktion
 const NavBar: React.FC<NavbarProps> = ({ user }) => {
+  const location = useLocation();
+
   const headerStyle: React.CSSProperties = {
     backgroundColor: "var(--background)",
     padding: "45px 0 0.6rem 0",
@@ -66,24 +67,26 @@ const NavBar: React.FC<NavbarProps> = ({ user }) => {
         </h1>
         <ul style={ulStyle}>
           {user ? (
-            // Wenn user angemeldet ist, Avatar + Name anzeigen
             <li style={liStyle}>
               <Link to="/profile" style={linkStyle}>
-                {/* <img
-                  src={user.avatarUrl}
-                  alt={`${user.name}'s Avatar`}
-                  style={{ width: "32px", height: "32px", borderRadius: "50%", marginRight: "0.5rem" }}
-                /> */}
                 <span>{localStorage.getItem("e-mail")}</span>
               </Link>
             </li>
           ) : (
-            // Wenn NICHT angemeldet, Login-Link zeigen
-            <li style={liStyle}>
-              <Link to="/loginpage" style={linkStyle}>
-                Login
-              </Link>
-            </li>
+            <>
+              <li style={liStyle}>
+                <Link to="/loginpage" style={linkStyle}>
+                  Login
+                </Link>
+              </li>
+              {location.pathname === "/loginpage" && (
+                <li style={liStyle}>
+                  <Link to="/registerpage" style={linkStyle}>
+                    Register
+                  </Link>
+                </li>
+              )}
+            </>
           )}
         </ul>
       </nav>
