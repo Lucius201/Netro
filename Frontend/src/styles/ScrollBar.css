@@ -1,22 +1,27 @@
 .scroll-indicator {
     position: fixed;
     top: 50%;
-    right: 20px;
+    right: 30px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
     z-index: 1000;
+    height: auto;
 }
 
-.scroll-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #bbb;
-    transition: background-color 0.3s;
+.scroll-dot, .scroll-active-indicator {
+    width: 30px;
+    height: 7px;
+    border-radius: 20px;
+    background-color: grey;
+    position: relative;
 }
 
-.scroll-dot.active {
-    background-color: #000;
+.scroll-active-indicator {
+    position: absolute;
+    background-color: lightgrey;
+    transition: top 0.3s ease-out;
+    pointer-events: none;
+    z-index: 1;
 }
