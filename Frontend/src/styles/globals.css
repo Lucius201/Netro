@@ -23,6 +23,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    z-index: 10;
 }
 
 html {
@@ -119,7 +120,7 @@ a:hover {
     opacity: 0;
     transition: opacity 1s ease;
   }
-  
+
 .fade-in-section.visible {
     opacity: 1;
 }
@@ -127,7 +128,7 @@ a:hover {
 
 
 
-/* Header und Navigation 
+/* Header und Navigation
 header {
     background-color: var(--background);
     padding: 45px 0 0.6rem 0;
@@ -150,11 +151,11 @@ header {
      opacity: 1;
     }
   }
-  
+
   .navbar {
     animation: fadeinNav 1s;
   }
-  
+
 /*header.navbar-on-scroll {
     padding-top: 15px;
     height: 70px;
@@ -292,7 +293,7 @@ article:first-child {
     font-size: 240px;
     margin-bottom: 40px;
     color: #8d5ce0;
-    background: linear-gradient(to bottom, #2A213D, #3F3155); 
+    background: linear-gradient(to bottom, #2A213D, #3F3155);
     box-shadow: 2px 2px 10px #4d3e63;
     border-radius: 70px;
     padding: 25px;
@@ -350,16 +351,16 @@ article:first-child {
 }
 
 /* Footer */
-.footer {
-    position: relative;
-    color: var(--link);
-    background-image: url("/img/landscape.jpg");
-    background-position: top;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    padding: 0;
-}
+/*.footer {*/
+/*    position: relative;*/
+/*    color: var(--link);*/
+/*    background-image: url("/img/landscape.jpg");*/
+/*    background-position: top;*/
+/*    text-align: center;*/
+/*    margin: 0;*/
+/*    width: 100%;*/
+/*    padding: 0;*/
+/*}*/
 
 .footer h3, .footer h2 {
     color: var(--textcolor);
@@ -432,13 +433,13 @@ article:first-child {
     width: 60px;
     height: 34px;
   }
-  
-  .switch input { 
+
+  .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-  
+
   .slider {
     position: absolute;
     cursor: pointer;
@@ -450,7 +451,7 @@ article:first-child {
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   .slider:before {
     position: absolute;
     content: "";
@@ -462,26 +463,26 @@ article:first-child {
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   input:checked + .slider {
     background-color: #2196F3;
   }
-  
+
   input:focus + .slider {
     box-shadow: 0 0 1px #2196F3;
   }
-  
+
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
-  
+
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }
-  
+
   .slider.round:before {
     border-radius: 50%;
   }
@@ -495,28 +496,25 @@ article:first-child {
 
 
   #network-container {
-    filter: blur(3px);
+    filter: blur(4px);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    opacity: 0.4;
     height: 2000px;
-    width: 100%;
+      width: 100%;
 }
 
 .net-container {
-    opacity: 0.01;
     transition: opacity 2s;
     position: relative;
     margin-top: 400px;
     width: 100%;
-    z-index: 0;
+    z-index: 1;
+    background-color: yellow;
 }
 
-.net-container.erscheinen {
-    opacity: 0.4;
-}
 
 button {
     position: relative;
@@ -528,7 +526,7 @@ button {
 
 .box {
     position: relative;
-    
+
 }
 
 
@@ -649,7 +647,7 @@ button {
     .art-img-right {
         margin-left: 15px;
     }
-    
+
     .art-img-left {
         margin-right: 15px;
     }
@@ -678,7 +676,7 @@ button {
         flex-wrap: wrap;
         gap: 0rem 0.5rem; /* Abstand zwischen den Elementen */
     }
-    
+
     .sub-list li {
         flex: 1 1 calc(50% - 1rem); /* Zwei Elemente nebeneinander */
         box-sizing: border-box;
@@ -693,7 +691,7 @@ button {
         cursor: pointer;
         position: relative;
     }
-    
+
     .burger span {
         width: 100%;
         height: 3px;
@@ -702,19 +700,19 @@ button {
         transition: all 0.1s ease-in-out;
         position: absolute;
     }
-    
+
     .burger span:first-child {
         top: 0;
     }
-    
+
     .burger span:last-child {
         bottom: 0;
     }
-    
+
     .burger.dropdown-active span:first-child {
         transform: translateY(5px) rotate(45deg);
     }
-    
+
     .burger.burger.dropdown-active span:last-child {
         transform: translateY(-5px) rotate(-45deg);
     }
@@ -760,8 +758,9 @@ button {
     .footer-section {
         margin-top: 40px;
     }
-      
+
 }
+
 
 
 
