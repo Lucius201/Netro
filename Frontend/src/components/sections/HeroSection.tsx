@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import {useEffect} from "react";
+import { create3DNetwork } from './net.js';
 
 export default function HeroSection() {
   const sectionStyle: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
+    width: '100%'
   };
 
   const articleStyle: React.CSSProperties = {
@@ -14,8 +17,8 @@ export default function HeroSection() {
     color: 'var(--textgrey)',
     position: 'relative',
     overflow: 'hidden',
-    top: '50%',
-    transform: 'translate(0, calc(-50% + 30px))',
+    top: '100%',
+    transform: 'translate(0, calc(-50% - 60px))',
   };
 
   const h1Style: React.CSSProperties = {
@@ -36,7 +39,7 @@ export default function HeroSection() {
 
   const paragraphStyle: React.CSSProperties = {
     fontSize: '1.25rem',
-    marginTop: '1rem',
+    marginTop: '0.15rem',
     maxWidth: '40rem',
   };
 
@@ -53,6 +56,13 @@ export default function HeroSection() {
     transition: 'background-color 0.3s ease',
   };
 
+  useEffect(() => {
+    const container = document.getElementById('network-container');
+    if (container) {
+      create3DNetwork(container);
+    }
+  }, []);
+
   return (
     <section style={sectionStyle}>
       <article style={articleStyle}>
@@ -61,13 +71,18 @@ export default function HeroSection() {
             Connect with <span style={rainbowStyle}>New People</span>
           </h1>
           <p style={paragraphStyle}>
-            The Social Network that offers you Data Based Matches
+            The Messenger Application.
           </p>
           <Link to="/registerpage" style={ctaStyle}>
             Register Now
           </Link>
         </div>
       </article>
+
+      <div className="net-container">
+        <div id="network-container"></div>
+      </div>
+
     </section>
   );
 }

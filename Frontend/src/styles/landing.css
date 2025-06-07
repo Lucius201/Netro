@@ -1,0 +1,25 @@
+body, html {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; /* Für Firefox */
+    -ms-overflow-style: none; /* Für Internet Explorer 10+ */
+}
+.container::-webkit-scrollbar {
+    display: none; /* Für Chrome, Safari und Opera */
+}
+
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: background-color 0.5s ease-in-out;
+}
