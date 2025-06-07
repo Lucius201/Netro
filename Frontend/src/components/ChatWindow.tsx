@@ -7,10 +7,17 @@ type ChatMessage = {
     timestamp: string;
 };
 
+type User = {
+    email: string;
+    firstName: string;
+    lastName: string;
+};
+
 type Props = {
     messages: ChatMessage[];
     currentUserEmail: string | null;
-    selectedUser: string | null;
+    selectedUserEmail: string | null;
+    users: User[];
     text: string;
     setText: (t: string) => void;
     onSend: () => void;
@@ -20,12 +27,18 @@ type Props = {
 export default function ChatWindow({
     messages,
     currentUserEmail,
-    selectedUser,
+    selectedUserEmail,
+    users,
     text,
     setText,
     onSend,
     bottomRef,
 }: Props) {
+
+    const selectedUser = users.find(user => user.email === selectedUserEmail)
+
+
+
     if (!selectedUser) {
         return (
             <div
@@ -64,7 +77,7 @@ export default function ChatWindow({
                     marginBottom: "1rem",
                 }}
             >
-                <h3 style={{ marginBottom: "0.5rem" }}>{selectedUser}</h3>
+                <h3 style={{ marginBottom: "0.5rem" }}>{`${selectedUser.firstName} ${selectedUser.lastName}`}</h3>
                 {messages.map((msg, i) => {
                     const time = new Date(msg.timestamp).toLocaleString("de-DE", {
                         timeZone: "Europe/Berlin",
@@ -97,7 +110,6 @@ export default function ChatWindow({
                                 position: "relative",
                             }}
                         >
-                            <strong>{msg.senderId}: </strong>
                             {msg.content}
                             <span
                                 style={{

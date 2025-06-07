@@ -1,10 +1,10 @@
 type Props = {
-    users: string[];
-    selectedUser: string | null;
-    onSelectUser: (user: string) => void;
+    users: { email: string; firstName: string; lastName: string }[];
+    selectedUserEmail: string | null;
+    onSelectUser: (email: string) => void;
 };
 
-export default function Sidebar({ users, selectedUser, onSelectUser }: Props) {
+export default function Sidebar({ users, selectedUserEmail, onSelectUser }: Props) {
     return (
         <div
             style={{
@@ -18,22 +18,27 @@ export default function Sidebar({ users, selectedUser, onSelectUser }: Props) {
             }}
         >
             <h3 style={{ marginBottom: "1rem", fontSize: "1.1rem" }}>Chats</h3>
-            {users.map((user) => (
-                <div
-                    key={user}
-                    onClick={() => onSelectUser(user)}
-                    style={{
-                        padding: "0.5rem",
-                        borderRadius: "10px",
-                        marginBottom: "0.25rem",
-                        cursor: "pointer",
-                        backgroundColor:
-                            selectedUser === user ? "#3a0a75" : "transparent",
-                    }}
-                >
-                    {user}
-                </div>
-            ))}
+            {users.map((user) => {
+                const fullName = `${user.firstName} ${user.lastName}`;
+                return (
+                    <div
+                        key={user.email}
+                        onClick={() => onSelectUser(user.email)}
+                        style={{
+                            padding: "0.5rem",
+                            borderRadius: "10px",
+                            marginBottom: "0.25rem",
+                            cursor: "pointer",
+                            backgroundColor:
+                                selectedUserEmail === user.email
+                                    ? "#00091a"
+                                    : "transparent",
+                        }}
+                    >
+                        {fullName}
+                    </div>
+                );
+            })}
         </div>
     );
 }

@@ -1,11 +1,10 @@
 import Navbar from "../components/NavBarNeu";
 import HeroSection from "../components/HeroSection";
-// import LogIn
 import "../styles/globals.css";
 
 function Landing() {
     // Holt Name und Avatar-URL des Users aus dem LocalStorage
-    const name = localStorage.getItem("email");
+    const name = null;
     const avatarUrl = localStorage.getItem("avatarUrl");
 
     // Wenn ein Name vorhanden ist, wird ein User-Objekt erstellt.

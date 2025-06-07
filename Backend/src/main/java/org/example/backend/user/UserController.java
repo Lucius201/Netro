@@ -5,6 +5,7 @@ import org.example.backend.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // org.example.backend.web.UserController
@@ -30,6 +31,19 @@ public class UserController {
         // we are here only if the JWT cookie was valid.
         return getAllEmails();
     }
+    @GetMapping("/userlist")
+    public List<UserDTO> getUserList() {
+        List<String> emails = userRepository.listAllEmails();
+        List<String> firstNames = userRepository.listAllFirstNames();
+        List<String> lastNames = userRepository.listAllLastNames();
+
+        List<UserDTO> result = new ArrayList<>();
+        for (int i = 0; i < emails.size(); i++) {
+            result.add(new UserDTO(emails.get(i), firstNames.get(i), lastNames.get(i)));
+        }
+        return result;
+    }
+
 
 //    @PostMapping("/userfirstnames")
 //    public List<String> listUsers(@RequestBody Map<String, String> request) {
