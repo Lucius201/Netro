@@ -23,6 +23,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    z-index: 10;
 }
 
 html {
@@ -502,6 +503,7 @@ article:first-child {
     transform: translate(-50%, -50%);
     opacity: 0.4;
     height: 2000px;
+      width: 100%;
 }
 
 .net-container {
@@ -509,7 +511,7 @@ article:first-child {
     position: relative;
     margin-top: 400px;
     width: 100%;
-    z-index: 10;
+    z-index: 1;
     background-color: yellow;
 }
 
