@@ -1,32 +1,4 @@
-version: "3.9"
-
 services:
-#  frontend:
-#    build:
-#      context: ./Frontend
-#      dockerfile: Dockerfile
-#    ports:
-#      - "5173:80"
-#    networks:
-#      - netz
-#    depends_on:
-#      - backend
-#
-#  backend:
-#    build:
-#      context: ./Backend
-#      dockerfile: Dockerfile
-#    ports:
-#      - "8080:8080"
-#    depends_on:
-#      - db
-#    environment:
-#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/netrodb
-#      SPRING_DATASOURCE_USERNAME: netro_user
-#      SPRING_DATASOURCE_PASSWORD: netropass
-#    networks:
-#      - netz
-
   db:
     image: postgres:15
     restart: always
@@ -36,13 +8,11 @@ services:
       POSTGRES_PASSWORD: netropass
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
-    networks:
-      - netz
+
 
 volumes:
   postgres_data:
 
-networks:
-  netz:
