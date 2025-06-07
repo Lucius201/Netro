@@ -67,12 +67,19 @@ const NavBar: React.FC<NavbarProps> = ({ user }) => {
         </h1>
         <ul style={ulStyle}>
           {user ? (
+            <>
             <li style={liStyle}>
-              <Link to="/profile" style={linkStyle}>
-                <span>{localStorage.getItem("e-mail")}</span>
+              <Link to="/chat" style={linkStyle}>
+                Chat
               </Link>
             </li>
-          ) : (
+            <li style={liStyle}>
+              <Link to="/profile" style={linkStyle}>
+                <span>{user.name}</span>
+              </Link>
+            </li>
+          </>
+        ) : (
             <>
               <li style={liStyle}>
                 <Link to="/loginpage" style={linkStyle}>

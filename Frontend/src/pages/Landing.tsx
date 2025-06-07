@@ -1,6 +1,5 @@
 import Navbar from "../components/NavBarNeu";
 import HeroSection from "../components/HeroSection";
-// import LogIn
 import "../styles/globals.css";
 
 function Landing() {

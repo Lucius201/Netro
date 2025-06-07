@@ -1,12 +1,10 @@
 package org.example.backend.register;
 
-import lombok.*;
+import lombok.Data;
+import lombok.AllArgsConstructor;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@EqualsAndHashCode
 @Data
+@AllArgsConstructor
 public class RegisterRequest {
     private String email;
     private String password;
