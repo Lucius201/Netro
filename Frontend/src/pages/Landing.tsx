@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, RefCallback } from "react";
-import Navbar from "../components/NavBarNeu";
+import Navbar from "../components/NavBar.tsx";
 import HeroSection from "../components/sections/HeroSection.tsx";
 import ScrollBar from "../components/ScrollBar";
 import "../styles/globals.css";
