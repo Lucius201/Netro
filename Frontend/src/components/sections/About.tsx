@@ -6,6 +6,8 @@ export default function About() {
 
     const articleStyle: React.CSSProperties = {
         animation: 'fadein-firstSection 1s',
+        left: '60%',
+        transform: 'translate(-50%)'
     };
 
     const textBlockStyle: React.CSSProperties = {

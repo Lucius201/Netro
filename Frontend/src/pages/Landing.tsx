@@ -6,7 +6,7 @@ import "../styles/globals.css";
 import "../styles/landing.css";
 import Mission from "@/components/sections/GetStarted.tsx";
 import About from "@/components/sections/About.tsx";
-import Contact from "@/components/sections/Contact.tsx";
+import Contact from "@/components/sections/Functions.tsx";
 import Footer from "@/components/sections/Footer.tsx";
 
 

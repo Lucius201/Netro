@@ -19,7 +19,7 @@ export default function Footer() {
         color: 'var(--textgrey)',
         position: 'relative',
         overflow: 'hidden',
-        top: '50%',
+        top: '30%',
         transform: 'translate(0, calc(-50% - 60px))',
     };
 
@@ -27,8 +27,13 @@ export default function Footer() {
         fontSize: '3rem',
         fontWeight: 'bold',
         lineHeight: '1.1',
-        marginBottom: '300px',
-        textAlign: "center"
+        textAlign: "center",
+    };
+
+    const paragraphStyle: React.CSSProperties = {
+        fontSize: '1.25rem',
+        marginTop: '1rem',
+        textAlign: "center",
     };
 
     return (
@@ -36,8 +41,15 @@ export default function Footer() {
             <article style={articleStyle}>
                 <div style={textBlockStyle}>
                     <h1 style={h1Style}>
-                        Footer
+                        Contributers
                     </h1>
+                    <div style={paragraphStyle}>
+                        <ul>
+                            <li>Lucius Lechner</li>
+                            <li>Atussa Mehrawari</li>
+                            <li>Johann Flögel</li>
+                        </ul>
+                    </div>
                 </div>
             </article>
         </section>
