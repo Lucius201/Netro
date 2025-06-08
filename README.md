@@ -46,20 +46,6 @@ http://localhost:8080
 ---
 ## 🧑‍💻 Installing the PostgreSQL DB
 
-```bash
-  brew install postgresql@14
-```
-
-* PostgreSQL database on port 5432
-* User: `netro_user`
-* Database: `netrodb`
-* Password: `netropass`
-
-```bash
-  brew services start postgresql
-```
-
-### Optional:
 
 ```bash
   docker-compose up --build
