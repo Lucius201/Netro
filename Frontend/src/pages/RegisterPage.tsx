@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBarNeu";
+import NavBar from "../components/NavBar.tsx";
 import RegisterField from "../components/RegisterField";
 import "../styles/globals.css";
 

@@ -41,13 +41,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Öffentliche Endpunkte
                         .requestMatchers(HttpMethod.POST, "/", "/login", "/register").permitAll()
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // wichtig für Preflight!
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         .requestMatchers("/ws/**").permitAll()
 
                         // Authentifizierte Endpunkte
                         .requestMatchers("/api/**").authenticated()
-
                         // Alles andere ebenfalls geschützt
                         .anyRequest().authenticated()
                 );
