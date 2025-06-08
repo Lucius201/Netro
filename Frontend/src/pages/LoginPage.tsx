@@ -33,7 +33,7 @@ function LoginPage() {
 
     return (
         <>
-            <Navbar user={null} />
+            <Navbar />
             <div
                 style={{
                     display: "flex",

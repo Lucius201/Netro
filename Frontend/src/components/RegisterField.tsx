@@ -5,6 +5,9 @@ import "../styles/globals.css";
 export default function RegisterField() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+
     const navigate = useNavigate();
 
     async function handleRegister(e: React.FormEvent) {
@@ -52,11 +55,40 @@ export default function RegisterField() {
                     }}
                 ></label>
                 <input
-                    placeholder="Name"
-                    id="name"
-                    type="name"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="firstname"
+                    id="firstname"
+                    type="firstname"
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
+                    style={{
+                        width: "100%",
+                        padding: "0.75rem 1rem",
+                        borderRadius: "999px", // Pillenform
+                        border: "1px solid #2e2e2e", // Dunkelgraue Umrandung
+                        backgroundColor: "#3a3a3a", // Grauer Hintergrund
+                        color: "#fff", // Weißer Text
+                        fontSize: "1rem",
+                        outline: "none",
+                        marginBottom: "1rem",
+                    }}
+                    required
+                />
+            </div>
+            <div style={{ marginBottom: "1,5rem", textAlign: "left" }}>
+                <label
+                    htmlFor="name"
+                    style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "500",
+                    }}
+                ></label>
+             <input
+                    placeholder="lastname"
+                    id="lastname"
+                    type="lastname"
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
                     style={{
                         width: "100%",
                         padding: "0.75rem 1rem",

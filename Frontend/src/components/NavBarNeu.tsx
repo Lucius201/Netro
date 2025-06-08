@@ -1,18 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; 
 import '../styles/globals.css';
 import React from 'react';
 
-type User = {
-  name: string;
-  avatarUrl: string;
-};
-
-type NavbarProps = {
-  user: User | null;
-};
-
-const NavBar: React.FC<NavbarProps> = ({ user }) => {
-  const location = useLocation();
+export default function NavBar() {
+  const { isAuthenticated } = useAuth(); 
 
   const headerStyle: React.CSSProperties = {
     backgroundColor: "var(--background)",
@@ -66,39 +58,34 @@ const NavBar: React.FC<NavbarProps> = ({ user }) => {
           </Link>
         </h1>
         <ul style={ulStyle}>
-          {user ? (
+          {isAuthenticated ? (
             <>
-            <li style={liStyle}>
-              <Link to="/chat" style={linkStyle}>
-                Chat
-              </Link>
-            </li>
-            <li style={liStyle}>
-              <Link to="/profile" style={linkStyle}>
-                <span>{user.name}</span>
-              </Link>
-            </li>
-          </>
-        ) : (
+              <li style={liStyle}>
+                <Link to="/chat" style={linkStyle}>
+                  Chat
+                </Link>
+              </li>
+              <li style={liStyle}>
+                <Link to="/profile" style={linkStyle}>
+                </Link>
+              </li>
+            </>
+          ) : (
             <>
               <li style={liStyle}>
                 <Link to="/loginpage" style={linkStyle}>
                   Login
                 </Link>
               </li>
-              {location.pathname === "/loginpage" && (
-                <li style={liStyle}>
-                  <Link to="/registerpage" style={linkStyle}>
-                    Register
-                  </Link>
-                </li>
-              )}
+              <li style={liStyle}>
+                <Link to="/registerpage" style={linkStyle}>
+                  Register
+                </Link>
+              </li>
             </>
           )}
         </ul>
       </nav>
     </header>
   );
-};
-
-export default NavBar;
+}

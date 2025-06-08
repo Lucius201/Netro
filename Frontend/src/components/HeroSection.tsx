@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function HeroSection() {
+  const userIsAuthenticated = useAuth();
+
   const sectionStyle: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
@@ -40,18 +43,18 @@ export default function HeroSection() {
     maxWidth: '40rem',
   };
 
-  const ctaStyle: React.CSSProperties = {
-    display: 'inline-block',
-    marginTop: '2rem',
-    padding: '0.75rem 1.5rem',
-    backgroundColor: '#8d5ce0',
-    color: '#fff',
-    borderRadius: '8px',
-    textDecoration: 'none',
-    fontWeight: 600,
-    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-    transition: 'background-color 0.3s ease',
-  };
+  // const ctaStyle: React.CSSProperties = {
+  //   display: 'inline-block',
+  //   marginTop: '2rem',
+  //   padding: '0.75rem 1.5rem',
+  //   backgroundColor: '#8d5ce0',
+  //   color: '#fff',
+  //   borderRadius: '8px',
+  //   textDecoration: 'none',
+  //   fontWeight: 600,
+  //   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+  //   transition: 'background-color 0.3s ease',
+  // };
 
   return (
     <section style={sectionStyle}>
@@ -63,9 +66,11 @@ export default function HeroSection() {
           <p style={paragraphStyle}>
             The Social Network that offers you Data Based Matches
           </p>
-          <Link to="/registerpage" style={ctaStyle}>
-            Register Now
-          </Link>
+            {!userIsAuthenticated && (
+            <Link to="/registerpage">
+              Register Now
+            </Link>
+          )}
         </div>
       </article>
     </section>
