@@ -5,7 +5,7 @@ import "../styles/globals.css";
 export default function RegisterPage() {
     return (
         <>
-            <NavBar user={null} />
+            <NavBar/>
             <div
                 style={{
                     display: "flex",
