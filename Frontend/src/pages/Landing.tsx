@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, RefCallback } from "react";
+import { RefCallback, useEffect, useRef, useState } from "react";
 import Navbar from "../components/NavBar.tsx";
 import HeroSection from "../components/sections/HeroSection.tsx";
 import ScrollBar from "../components/ScrollBar";
@@ -8,8 +8,6 @@ import Mission from "@/components/sections/GetStarted.tsx";
 import About from "@/components/sections/About.tsx";
 import Contact from "@/components/sections/Functions.tsx";
 import Footer from "@/components/sections/Footer.tsx";
-
-
 
 const sections = [
     { id: 1, component: <HeroSection /> },
@@ -24,16 +22,11 @@ export default function Landing() {
     const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const setRef = (index: number): RefCallback<HTMLDivElement> => (el) => {
-        sectionRefs.current[index] = el;
-    };
-
-    const user = localStorage.getItem("email")
-        ? {
-            name: localStorage.getItem("email")!,
-            avatarUrl: localStorage.getItem("avatarUrl") || "",
-        }
-        : null;
+    const setRef =
+        (index: number): RefCallback<HTMLDivElement> =>
+        (el) => {
+            sectionRefs.current[index] = el;
+        };
 
     useEffect(() => {
         const container = containerRef.current;
@@ -54,10 +47,9 @@ export default function Landing() {
         return () => container.removeEventListener("scroll", handleScroll);
     }, []);
 
-
     return (
         <>
-            <Navbar user={user}/>
+            <Navbar />
 
             <div className="container" ref={containerRef}>
                 {sections.map((section, index) => (
@@ -71,9 +63,7 @@ export default function Landing() {
                 ))}
             </div>
 
-            <ScrollBar count={sections.length} activeIndex={activeIndex}/>
-
-
+            <ScrollBar count={sections.length} activeIndex={activeIndex} />
         </>
     );
 }
