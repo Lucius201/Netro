@@ -5,6 +5,7 @@ import "../styles/globals.css";
 export default function RegisterField() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+#ä  1  const [name, setName] = useState("");
     const navigate = useNavigate();
 
     async function handleRegister(e: React.FormEvent) {
@@ -55,8 +56,8 @@ export default function RegisterField() {
                     placeholder="Name"
                     id="name"
                     type="name"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     style={{
                         width: "100%",
                         padding: "0.75rem 1rem",
